@@ -1,0 +1,21 @@
+
+1. add knowledge base {
+    1. add questions✔️
+    2. add answers✔️
+    3. Knowledge Base Query Optimization✔️
+
+}
+2. add calculator
+3. add weather
+4. add news
+5. Dynamic Response Handling 
+6. add Open-Ended Conversations
+7. add Memory Persistence Beyond Knowledge base { 
+                                                ||======discription======||
+    While the bot saves learned knowledge, it doesn’t remember conversational context beyond the session, unless explicitly programmed.
+}
+
+8. Keyword-Based Context Awareness {
+    The bot has a basic awareness of the conversation context, but it doesn’t know how to respond to new questions.
+    so the gole is to make the bot respond to new questions based on the context.
+}

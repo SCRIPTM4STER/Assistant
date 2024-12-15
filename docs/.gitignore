@@ -1,0 +1,11 @@
+# Ignore the __pycache__ folder inside Handlers
+Handlers/__pycache__/
+
+# Ignore the specific Python bytecode file inside __pycache__
+Handlers/__pycache__/DynamicResponseHandler.cpython-312.pyc
+
+# Ignore the bot_errors.log file inside DB
+DB/bot_errors.log
+
+# Ignore the .todo file
+.todo
