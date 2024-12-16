@@ -1,3 +1,4 @@
+__pycache__
 # Ignore the __pycache__ folder inside Handlers
 Handlers/__pycache__/
 
