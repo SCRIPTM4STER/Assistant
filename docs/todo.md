@@ -64,6 +64,18 @@
 
 ---
 
+## 9. Add User Preferences
+- Allow users to set their own preferences (e.g., favorite topics, frequently asked questions).
+- Use these preferences to personalize the bot's responses.
+
+---
+
+## 10. Add Advanced Memory Management
+- Enhance the memory management system to:
+  - Handle long-term memory for recurring users.
+  - Store context in a database for continuity between sessions.
+  - Use advanced algorithms like **BM25** for efficient question matching and retrieval.
+
 ## Additional Enhancements
 
 ### Enhanced Error Handling

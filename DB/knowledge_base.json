@@ -16,7 +16,7 @@
         "hey there!",
         "what's up?",
         "yo!",
-        "hi, how\u00e2\u20ac\u2122s it going?",
+        "hi, howâ€™s it going?",
         "hello, nice to meet you!"
       ]
     },
@@ -34,7 +34,7 @@
     {
       "question": "hola",
       "answers": [
-        "\u00c2\u00a1Hola!",
+        "¡Hola!",
         "Hey!",
         "Hi there!",
         "Hello!"
@@ -46,13 +46,13 @@
         "hey!",
         "hello!",
         "hi there!",
-        "hey, how\u00e2\u20ac\u2122s it going?",
+        "hey, howâ€™s it going?",
         "good to see you!",
         "hi!"
       ]
     },
     {
-      "question": "what\u00e2\u20ac\u2122s up",
+      "question": "whatâ€™s up",
       "answers": [
         "Not much, how about you?",
         "Hello!",
@@ -128,7 +128,7 @@
       "answers": [
         "Good afternoon!",
         "Hello, good afternoon!",
-        "Hi there, how\u00e2\u20ac\u2122s your afternoon?",
+        "Hi there, howâ€™s your afternoon?",
         "Afternoon, how are you?"
       ]
     },
@@ -137,7 +137,7 @@
       "answers": [
         "Good evening!",
         "Hello, good evening!",
-        "Hi, how\u00e2\u20ac\u2122s your evening?",
+        "Hi, howâ€™s your evening?",
         "Evening, how are you?"
       ]
     },
@@ -184,11 +184,83 @@
         "I’m here to help with anything you need, from conversation to information.",
         "I can help you with coding, answer general knowledge questions, or just chat!"
       ]
-    },            
+    },
     {
       "question": "lo",
       "answers": [
         "hla"
+      ]
+    },
+    {
+      "category": "general knowledge",
+      "questions": [
+        {
+          "question": "what is the capital of France?",
+          "answers": ["Paris"]
+        },
+        {
+          "question": "who is the president of the United States?",
+          "answers": ["Joe Biden"]
+        },
+        {
+          "question": "what is the tallest mountain in the world?",
+          "answers": ["Mount Everest"]
+        }
+      ]
+    },
+    {
+      "category": "jokes",
+      "questions": [
+        {
+          "question": "tell me a joke",
+          "answers": [
+            "Why don't skeletons fight each other? They don't have the guts!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!"
+          ]
+        },
+        {
+          "question": "make me laugh",
+          "answers": [
+            "Why don't eggs tell jokes? Because they'd crack each other up!",
+            "I told my wife she was drawing her eyebrows too high. She looked surprised!"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "facts",
+      "questions": [
+        {
+          "question": "tell me a fun fact",
+          "answers": [
+            "Did you know that honey never spoils? Archaeologists have found pots of honey in ancient tombs that are over 3,000 years old!"
+          ]
+        },
+        {
+          "question": "share an interesting fact",
+          "answers": [
+            "The Eiffel Tower can grow by up to 6 inches during the summer due to the expansion of the metal from heat!"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "help",
+      "questions": [
+        {
+          "question": "how can you assist me?",
+          "answers": [
+            "I can help you with answering questions, providing information, or even just chatting!",
+            "I can assist you with coding, learning new things, and telling you interesting facts or jokes!"
+          ]
+        },
+        {
+          "question": "can you help me with coding?",
+          "answers": [
+            "Yes, I can help with coding! What language or problem are you working on?",
+            "Sure, let me know the issue you're facing, and I can assist you!"
+          ]
+        }
       ]
     }
   ]
