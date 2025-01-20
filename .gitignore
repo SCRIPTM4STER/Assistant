@@ -1,12 +1,48 @@
-__pycache__
-# Ignore the __pycache__ folder inside Handlers
-Handlers/__pycache__/
+# Python-specific ignores
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
 
-# Ignore the specific Python bytecode file inside __pycache__
-Handlers/__pycache__/DynamicResponseHandler.cpython-312.pyc
+# Virtual environment folders
+.venv/
+env/
 
-# Ignore the bot_errors.log file inside DB
-DB/bot_errors.log
+# Logs and debug-related files
+*.log
+*.debug
 
-# Ignore the .todo file
-.todo
+# Audio and temporary files
+speech.mp3
+
+# Application-specific files
+Chatlog.json
+Voice.html
+
+# Project-specific folders
+Scripts/
+Content/
+
+# IDE and editor configuration files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Ignore everything in node_modules (if applicable)
+node_modules/
+
+# Ignore coverage and testing outputs
+coverage/
+*.coverage
+test-results/
+
+# Ignore build artifacts
+build/
+dist/
+*.egg-info/
