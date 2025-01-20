@@ -30,6 +30,9 @@ Content/
 *.sublime-workspace
 *.sublime-project
 
+.env
+.gitignore
+
 # System files
 .DS_Store
 Thumbs.db
