@@ -60,6 +60,13 @@ Contributions are welcome! If you would like to contribute to Sophia, please fol
 ## License
 Sophia is released under the [MIT License](LICENSE).
 
+
+## Documents
+- [Inform me if anyone adds frontend](./Docs/Frontend.md)
+- [Apology](./Docs/Apology.md)
+- [Features to Add](./Docs/Todo.md)
+
+
 ## Contact
 For any inquiries or support, feel free to reach out via email at **your-email@example.com**.
 
