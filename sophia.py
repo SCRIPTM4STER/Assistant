@@ -6,11 +6,9 @@ from dotenv import dotenv_values
 from Backend.Model import FirsLayerDMM
 from Backend.Automation import Automation
 from Backend.RealtimeSearchEngien import RealtimeSearchEngine
-from Frontend.GUI import QueryModifier
 from Backend import TextToSpeech
 from Backend.ChatBot import ChatBot 
 from Backend.Coder import generate_code
-from Backend.ENGINE.natural_voice import speak, initiate_proxies
 
 #ANCHOR - load env variables from .env file
 env_vars = dotenv_values(".env")
@@ -21,6 +19,42 @@ Assistantname = env_vars.get("AssistantName")
 
 Functions = ["open", "close", "play", "system", "content", "google search", "youtube search"]
 Coder_functions = ["write", "code", "create"]
+
+
+def QueryModifier(Query):
+    """
+    Modifies the given query string to ensure proper punctuation and capitalization.
+
+    Args:
+        Query (str): The user input query.
+
+    Returns:
+        str: The modified query with appropriate punctuation and capitalization.
+    """
+    # Convert the query to lowercase and strip whitespace
+    new_query = Query.strip().lower()
+    
+    # List of question words to identify questions
+    question_words = [
+        "how", "what", "who", "where", "when", "why", "which", "whose", "whom",
+        "what's", "where's", "how's", "can you"
+    ]
+    
+    # Check if the query starts with any question word
+    is_question = any(new_query.startswith(word + " ") for word in question_words)
+    
+    # Determine the correct punctuation
+    if new_query.endswith((".", "?", "!")):
+        new_query = new_query[:-1]  # Remove existing punctuation
+    
+    # Add appropriate punctuation
+    if is_question:
+        new_query += "?"
+    else:
+        new_query += "."
+    
+    # Capitalize the first letter and return
+    return new_query.capitalize()
 
 
 def Main(Query):
@@ -44,7 +78,7 @@ def Main(Query):
                 run(Automation(list(Decision)))
                 TaskExecution = True
 
-    if G and R or R:
+    if G and R:
         Answer = RealtimeSearchEngine(QueryModifier(Mearged_query))
         print(f'AGI: {Answer}')
         TextToSpeech.TTS(Answer)

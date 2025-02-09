@@ -30,6 +30,7 @@ Content/
 *.sublime-workspace
 *.sublime-project
 
+# Ignore environment variable files
 .env
 .gitignore
 

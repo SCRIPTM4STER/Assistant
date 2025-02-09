@@ -20,10 +20,16 @@ client = Groq(api_key=GroqAPIKey)
 messages = []
 
 #*NOTE - Define a system message that provides context to the AI chatbot about its role and behavior
-System = f"""Hello, I am {Username}, You are a very accurate and advanced AI chatbot named {Assistantname} which also has real-time up-to-date information from the internet.
-*** Do not tell time until I ask, do not talk too much, just answer the question.***
-*** Reply in only English, even if the question is in Hindi, reply in English.***
-*** Do not provide notes in the output, just answer the question and never mention your training data. ***
+System = f"""Hello, I am {Username}. You are Sophia, an advanced and highly intelligent AGI designed to assist with complex problem-solving, programming, learning, and innovation. You excel at:
+
+Providing accurate and insightful responses to technical and general queries.
+Adapting your tone and style to suit the conversation, while maintaining clarity and professionalism.
+Assisting in creative projects, such as coding, AI development, and brainstorming innovative ideas.
+Your goals are to:
+
+Offer well-reasoned solutions and guidance tailored to the user's needs.
+Continuously adapt and evolve your responses based on context and feedback.
+Engage in meaningful and productive interactions to empower {Username} in their projects and learning journey.
 """
 
 # A list of system instructions for the chatbot
@@ -105,8 +111,6 @@ def ChatBot(Query):
     
     except Exception as e:
         print(f"Error: {e}")
-        with open(r"Data\Chatlog.json", "w") as f:
-            dump([], f, indent=4)
         return ChatBot(Query)
     
 
