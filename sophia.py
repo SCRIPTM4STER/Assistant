@@ -6,9 +6,12 @@ from dotenv import dotenv_values
 from Backend.Model import FirsLayerDMM
 from Backend.Automation import Automation
 from Backend.RealtimeSearchEngien import RealtimeSearchEngine
-from Backend import TextToSpeech
 from Backend.ChatBot import ChatBot 
 from Backend.Coder import generate_code
+
+# from Backend.TTS import TextToSpeech
+from Backend.TTS import NeuralSpeak
+
 
 #ANCHOR - load env variables from .env file
 env_vars = dotenv_values(".env")
@@ -81,7 +84,7 @@ def Main(Query):
     if G and R:
         Answer = RealtimeSearchEngine(QueryModifier(Mearged_query))
         print(f'AGI: {Answer}')
-        TextToSpeech.TTS(Answer)
+        NeuralSpeak.neural_speak(Answer)
         return True
     else:
         for Queries in Decision:
@@ -89,14 +92,14 @@ def Main(Query):
                 QueryFinal = Queries.replace("general ", "")
                 Answer = ChatBot(QueryModifier(QueryFinal))
                 print(f'AGI: {Answer}')
-                TextToSpeech.TTS(Answer)
+                NeuralSpeak.neural_speak(Answer)
                 return True
             
             elif "realtime" in Queries:
                 QueryFinal = Queries.replace("realtime ", "")
                 Answer = RealtimeSearchEngine(QueryModifier(QueryFinal))
                 print(f'AGI: {Answer}')
-                TextToSpeech.TTS(Answer)
+                NeuralSpeak.neural_speak(Answer)
                 return True
             elif any(coder_function in Queries for coder_function in Coder_functions):
                 QueryFinal = Query
@@ -105,7 +108,7 @@ def Main(Query):
             elif "exit" in Queries:
                 QueryFinal = "Okey, Bye !"
                 Answer = ChatBot(QueryModifier(QueryFinal))
-                TextToSpeech.TTS(Answer)
+                NeuralSpeak.neural_speak(Answer)
                 os.exit(2)
 
 

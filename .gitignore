@@ -23,6 +23,7 @@ Voice.html
 # Project-specific folders
 Scripts/
 Content/
+Graphics/
 
 # IDE and editor configuration files
 .vscode/
