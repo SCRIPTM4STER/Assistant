@@ -4,6 +4,7 @@ import asyncio  # Import asyncio for asynchronous operations
 import edge_tts  # Import edge_tts for text-to-speech functionality
 import os  # Import os for file path handling
 from dotenv import dotenv_values  # Import dotenv for reading environment variables
+import time  # For adding pauses in TTS
 
 # Load environment variables from a .env file
 env_vars = dotenv_values(".env")
@@ -11,33 +12,41 @@ Assistantvoice = env_vars.get("Assistantvoice")
 
 
 async def TextToAudioFile(text) -> None:
-    """Converts text to an audio file using edge_tts."""
+    """Converts text to an audio file using edge_tts with pauses."""
     file_path = r"Data/speech.mp3"
 
     # Remove the existing file if it exists
     if os.path.exists(file_path):
         os.remove(file_path)
 
-    # Generate speech audio
+    # Generate speech audio with edge_tts
     communicate = edge_tts.Communicate(text, Assistantvoice, pitch='+5Hz', rate='+13%')
     await communicate.save(file_path)
 
 
-import string
-
 def preprocess_text(text):
     """
     Removes all punctuation except ., ?, and , from the input text.
+    Adds pauses based on punctuation marks (without SSML tags).
     """
     allowed_punctuation = {'.', '?', ','}
-    return ''.join(char for char in text if char.isalnum() or char.isspace() or char in allowed_punctuation)
+    modified_text = ''
+
+    # Add pauses based on punctuation marks
+    for char in text:
+        if char in allowed_punctuation:
+            modified_text += char + '  '  # Just adding a space for pause
+        else:
+            modified_text += char
+
+    return modified_text
 
 
 def TTS(Text, func=lambda r=None: True):
     """Plays the generated audio file using pygame."""
     while True:
         try:
-            # Preprocess the text to remove unwanted punctuation
+            # Preprocess the text to add pauses and remove unwanted punctuation
             cleaned_text = preprocess_text(Text)
 
             # Generate the audio file
@@ -66,7 +75,6 @@ def TTS(Text, func=lambda r=None: True):
                 pygame.mixer.quit()
             except Exception as e:
                 print(f"Error in finally block: {e}")
-
 
 
 def TextToSpeech(Text, func=lambda r=None: True):

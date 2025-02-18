@@ -25,6 +25,8 @@ Scripts/
 Content/
 Graphics/
 
+GUI.py
+
 # IDE and editor configuration files
 .vscode/
 .idea/
